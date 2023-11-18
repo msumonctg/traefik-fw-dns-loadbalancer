@@ -1,0 +1,24 @@
+udp:
+  routers:
+    router-dns:
+      entryPoints:
+        - dns
+      service: dns-service
+  services:
+    dns-service:
+      loadBalancer:
+        servers:
+          - address: "100.64.4.4:53"
+          - address: "100.64.16.254:53"
+tcp:
+  routers:
+    router-tcpdns:
+      entryPoints:
+        - tcpdns
+      service: tcpdns-service
+  services:
+    tcpdns-service:
+      loadBalancer:
+        servers:
+          - address: "100.64.16.25:53"
+          - address: "100.64.16.254:53"

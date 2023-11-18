@@ -1,0 +1,20 @@
+version: "3.3"
+
+services:
+  traefik:
+    image: "traefik:v2.10"
+    container_name: "traefik-dns-LB"
+    command:
+      - "--api.dashboard=true"
+      - "--api.insecure=true"
+      - "--providers.file.filename=/etc/traefik/dynamic.yml"
+      - "--entrypoints.dns.address=:53/udp"
+      - "--entrypoints.tcpdns.address=:53/tcp"
+    ports:
+      - "80:80"
+      - "8080:8080"
+      - "53:53"
+      - "53:53/udp"
+    volumes:
+      #- "/home/sumon/traefik.yml:/etc/traefik/traefik.yml"
+      - "/home/sumon/traefik_dynamic.yml:/etc/traefik/dynamic.yml"
