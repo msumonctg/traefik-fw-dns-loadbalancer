@@ -1,7 +1,7 @@
 <h4>Tested on: <b>Ubuntu 20.04 LTS</b> And <b>Zorin OS 16.3</b></h4>
 
 Place these 2 files (<i>docker-compose.yml, traefik_dynamic.yml</i>) on same directory.
-<br>
+<br><br>
 Edit the file: <b>docker-compose.yml</b> on line number 20, replace the <i>'/home/sumon'</i> with your current directory path.
 <br>
 Edit the file: <b>traefik_dynamic.yml</b> on line 11,12,23,24 replace these IPs with your load balancing FW DNS Server IPs.
